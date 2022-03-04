@@ -2,6 +2,7 @@ package com.fifththirdbankcc.rest
 
 import com.fifththirdbankcc.model.JokeCategory
 import com.fifththirdbankcc.utils.JokeResult
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 interface JokeRepository {
@@ -13,11 +14,28 @@ class JokeRepositoryImpl(
     val jokesService: JokeService
 ) : JokeRepository {
 
+    private val _dailyJokeState: MutableStateFlow<JokeResult> = MutableStateFlow(JokeResult.LOADING)
+
     override val dailyJoke: StateFlow<JokeResult>
-        get() = TODO("Not yet implemented")
+        get() = _dailyJokeState
 
     override suspend fun getDailyJoke(category: JokeCategory) {
-        TODO("Not yet implemented")
+        try {
+            val response = jokesService.getDailyJoke(category.cat)
+
+            if (response.isSuccessful) {
+                response.body()?.let {
+                    _dailyJokeState.value = JokeResult.SUCCESS(it.contents.jokes[0])
+                } ?: run {
+                    _dailyJokeState.value = JokeResult.ERROR(IllegalStateException("Jokes are coming as null!"))
+                }
+
+            } else {
+                _dailyJokeState.value = JokeResult.ERROR(Exception(response.errorBody()?.string()))
+            }
+        } catch (e: Exception) {
+            _dailyJokeState.value = JokeResult.ERROR(e)
+        }
     }
 
 }

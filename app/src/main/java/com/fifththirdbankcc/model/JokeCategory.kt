@@ -1,6 +1,6 @@
 package com.fifththirdbankcc.model
 
-enum class JokeCategory(category: String) {
+enum class JokeCategory(val cat: String) {
     JOD("jod"),
     BLONDE("blonde"),
     ANIMAL("animal"),
