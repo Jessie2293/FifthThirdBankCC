@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/welcomePageFragment">
+
+    <fragment
+        android:id="@+id/welcomePageFragment"
+        android:name="com.fifththirdbankcc.view.WelcomePageFragment"
+        android:label="fragment_welcome_page"
+        tools:layout="@layout/fragment_welcome_page" >
+        <action
+            android:id="@+id/action_welcomePageFragment_to_viewPageFragment"
+            app:destination="@id/viewPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPageFragment"
+        android:name="com.fifththirdbankcc.view.ViewPageFragment"
+        android:label="fragment_view_page"
+        tools:layout="@layout/fragment_view_page" />
+</navigation>

@@ -1,5 +1,7 @@
 package com.fifththirdbankcc.view
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -13,17 +15,13 @@ import com.fifththirdbankcc.utils.JokeResult
 import com.fifththirdbankcc.viewmodel.DailyJokeViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DailyAnimalJokeFragment : Fragment() {
+class DailyAnimalJokeFragment : BaseFragment() {
 
     private val binding by lazy {
         FragmentDailyAnimalJokeBinding.inflate(layoutInflater)
     }
 
     private val jokeViewModel: DailyJokeViewModel by viewModel()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,8 +38,11 @@ class DailyAnimalJokeFragment : Fragment() {
                     Log.d(TAG, state.data.joke.text)
                 }
                 is JokeResult.ERROR -> {
-                    // TODO display error dialog
                     Log.e(TAG, state.error.localizedMessage, state.error)
+
+                    showErrorDialog(state.error) {
+                        jokeViewModel.subscribeToDailyJoke(JokeCategory.ANIMAL)
+                    }
                 }
             }
         }

@@ -2,4 +2,6 @@
     <string name="app_name">FifthThirdBankCC</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_can_get_a_random_joke_of_the_day_an_animal_joke_a_blonde_joke_and_a_knock_knock_joke">You can get a random joke of the day, an animal joke, a blonde joke, and a knock-knock joke!</string>
+    <string name="welcome_to_daily_jokes">Welcome to Daily Jokes!</string>
 </resources>

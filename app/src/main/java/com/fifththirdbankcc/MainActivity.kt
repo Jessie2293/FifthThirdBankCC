@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction()
             .addToBackStack(null)
-            .replace(R.id.frag_container, DailyAnimalJokeFragment.newInstance())
+            .replace(R.id.host_fragment, DailyAnimalJokeFragment.newInstance())
             .commit()
     }
 }
