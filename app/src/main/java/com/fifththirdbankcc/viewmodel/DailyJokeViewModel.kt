@@ -40,4 +40,9 @@ class DailyJokeViewModel(
             }
         }
     }
+
+    fun reset() {
+        jokeRepository.resetState()
+        _jokeLivedata.postValue(JokeResult.LOADING)
+    }
 }

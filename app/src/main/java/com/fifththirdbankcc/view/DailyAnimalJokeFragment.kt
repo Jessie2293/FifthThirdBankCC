@@ -8,17 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.fifththirdbankcc.databinding.FragmentDailyAnimalJokeBinding
 import com.fifththirdbankcc.model.JokeCategory
+import com.fifththirdbankcc.utils.FragmentName
 import com.fifththirdbankcc.utils.JokeResult
-import com.fifththirdbankcc.viewmodel.DailyJokeViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DailyAnimalJokeFragment : BaseFragment() {
 
     private val binding by lazy {
         FragmentDailyAnimalJokeBinding.inflate(layoutInflater)
     }
-
-    private val jokeViewModel: DailyJokeViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,7 +36,7 @@ class DailyAnimalJokeFragment : BaseFragment() {
                     binding.progressBar.visibility = View.GONE
                     Log.e(TAG, state.error.localizedMessage, state.error)
 
-                    showErrorDialog(state.error) {
+                    showErrorDialog(state.error, FragmentName.ANIMAL) {
                         jokeViewModel.subscribeToDailyJoke(JokeCategory.ANIMAL)
                     }
                 }

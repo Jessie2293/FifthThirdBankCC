@@ -1,19 +1,14 @@
 package com.fifththirdbankcc.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.fifththirdbankcc.R
-import com.fifththirdbankcc.databinding.FragmentDailyAnimalJokeBinding
 import com.fifththirdbankcc.databinding.FragmentWelcomePageBinding
 
 
-class WelcomePageFragment : Fragment() {
+class WelcomePageFragment : BaseFragment() {
 
     private val binding by lazy {
         FragmentWelcomePageBinding.inflate(layoutInflater)

@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 interface JokeRepository {
     val dailyJoke: StateFlow<JokeResult>
+    fun resetState()
     suspend fun getDailyJoke(category: JokeCategory)
 }
 
@@ -18,6 +19,10 @@ class JokeRepositoryImpl(
 
     override val dailyJoke: StateFlow<JokeResult>
         get() = _dailyJokeState
+
+    override fun resetState() {
+        _dailyJokeState.value = JokeResult.LOADING
+    }
 
     override suspend fun getDailyJoke(category: JokeCategory) {
         try {

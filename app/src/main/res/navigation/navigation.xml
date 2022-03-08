@@ -23,24 +23,49 @@
             android:id="@+id/action_welcomePageFragment_to_dailyKnockJokeFragment"
             app:destination="@id/dailyKnockJokeFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/jokeOfDayFragment"
         android:name="com.fifththirdbankcc.view.JokeOfDayFragment"
         android:label="fragment_joke_of_day"
-        tools:layout="@layout/fragment_joke_of_day" />
+        tools:layout="@layout/fragment_joke_of_day">
+
+        <action
+            android:id="@+id/action_jokeOfDayFragment_to_welcomePageFragment"
+            app:destination="@id/welcomePageFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/dailyAnimalJokeFragment"
         android:name="com.fifththirdbankcc.view.DailyAnimalJokeFragment"
         android:label="fragment_daily_animal_joke"
-        tools:layout="@layout/fragment_daily_animal_joke" />
+        tools:layout="@layout/fragment_daily_animal_joke">
+
+        <action
+            android:id="@+id/action_animalJokeFragment_to_welcomePageFragment"
+            app:destination="@id/welcomePageFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/dailyBlondeJokeFragment"
         android:name="com.fifththirdbankcc.view.DailyBlondeJokeFragment"
         android:label="fragment_daily_blonde_joke"
-        tools:layout="@layout/fragment_daily_blonde_joke" />
+        tools:layout="@layout/fragment_daily_blonde_joke">
+
+        <action
+            android:id="@+id/action_dailyBlondeJokeFragment_to_welcomePageFragment"
+            app:destination="@id/welcomePageFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/dailyKnockJokeFragment"
         android:name="com.fifththirdbankcc.view.DailyKnockJokeFragment"
         android:label="fragment_daily_knock_joke"
-        tools:layout="@layout/fragment_daily_knock_joke" />
+        tools:layout="@layout/fragment_daily_knock_joke">
+
+        <action
+            android:id="@+id/action_dailyKnockJokeFragment_to_welcomePageFragment"
+            app:destination="@id/welcomePageFragment" />
+    </fragment>
+
 </navigation>
