@@ -37,16 +37,53 @@
             app:layout_constraintBottom_toTopOf="@id/iv_emoji"/>
 
         <Button
-            android:id="@+id/btn_laugh"
-            android:layout_width="match_parent"
+            android:id="@+id/btn_jod"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Let's Laugh!"
+            android:layout_marginStart="8dp"
+            android:text="Joke of the Day"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_emoji"/>
+
+        <Button
+            android:id="@+id/btn_animal"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Animal joke"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_emoji"/>
+
+        <Button
+            android:id="@+id/btn_blonde"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Blonde Joke"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_jod"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_knock"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Knock-Knock Joke"
+            android:textSize="12sp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/btn_animal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 
         <ImageView
             android:id="@+id/iv_emoji"
@@ -55,8 +92,8 @@
             android:src="@drawable/emoji"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_desc"
-            app:layout_constraintBottom_toTopOf="@id/btn_laugh"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 

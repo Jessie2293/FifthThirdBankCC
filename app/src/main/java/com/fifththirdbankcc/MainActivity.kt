@@ -6,18 +6,11 @@ import com.fifththirdbankcc.databinding.ActivityMainBinding
 import com.fifththirdbankcc.view.DailyAnimalJokeFragment
 
 class MainActivity : AppCompatActivity() {
-
-    private val binding by lazy {
-        ActivityMainBinding.inflate(layoutInflater)
-    }
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        supportFragmentManager.beginTransaction()
-            .addToBackStack(null)
-            .replace(R.id.host_fragment, DailyAnimalJokeFragment.newInstance())
-            .commit()
     }
 }

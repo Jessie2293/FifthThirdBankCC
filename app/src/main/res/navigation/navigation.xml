@@ -11,12 +11,36 @@
         android:label="fragment_welcome_page"
         tools:layout="@layout/fragment_welcome_page" >
         <action
-            android:id="@+id/action_welcomePageFragment_to_viewPageFragment"
-            app:destination="@id/viewPageFragment" />
+            android:id="@+id/action_welcomePageFragment_to_jokeOfDayFragment"
+            app:destination="@id/jokeOfDayFragment" />
+        <action
+            android:id="@+id/action_welcomePageFragment_to_dailyAnimalJokeFragment"
+            app:destination="@id/dailyAnimalJokeFragment" />
+        <action
+            android:id="@+id/action_welcomePageFragment_to_dailyBlondeJokeFragment"
+            app:destination="@id/dailyBlondeJokeFragment" />
+        <action
+            android:id="@+id/action_welcomePageFragment_to_dailyKnockJokeFragment"
+            app:destination="@id/dailyKnockJokeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewPageFragment"
-        android:name="com.fifththirdbankcc.view.ViewPageFragment"
-        android:label="fragment_view_page"
-        tools:layout="@layout/fragment_view_page" />
+        android:id="@+id/jokeOfDayFragment"
+        android:name="com.fifththirdbankcc.view.JokeOfDayFragment"
+        android:label="fragment_joke_of_day"
+        tools:layout="@layout/fragment_joke_of_day" />
+    <fragment
+        android:id="@+id/dailyAnimalJokeFragment"
+        android:name="com.fifththirdbankcc.view.DailyAnimalJokeFragment"
+        android:label="fragment_daily_animal_joke"
+        tools:layout="@layout/fragment_daily_animal_joke" />
+    <fragment
+        android:id="@+id/dailyBlondeJokeFragment"
+        android:name="com.fifththirdbankcc.view.DailyBlondeJokeFragment"
+        android:label="fragment_daily_blonde_joke"
+        tools:layout="@layout/fragment_daily_blonde_joke" />
+    <fragment
+        android:id="@+id/dailyKnockJokeFragment"
+        android:name="com.fifththirdbankcc.view.DailyKnockJokeFragment"
+        android:label="fragment_daily_knock_joke"
+        tools:layout="@layout/fragment_daily_knock_joke" />
 </navigation>
