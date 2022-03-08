@@ -1,4 +1,4 @@
-package com.fifththirdbankcc
+package com.fifththirdbankcc.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
